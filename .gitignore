@@ -1,5 +1,6 @@
 .gitignore
 playground.txt
+api.http
 
 HELP.md
 target/

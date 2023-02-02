@@ -28,14 +28,14 @@ public class JobCompletionNotificationListener extends JobExecutionListenerSuppo
         if(jobExecution.getStatus() == BatchStatus.COMPLETED) {
             log.info("!!! JOB FINISHED! Time to verify the results");
 
-            List<Object[]> answer = entityManager.createQuery(" SELECT role, company FROM job", Object[].class)
-                .getResultList();
-            for(Object[] row : answer) {
-                for(Object element : row) {
-                    log.info(element.toString());
-                }
-                log.info("\n");
-            }
+            // List<Object[]> answer = entityManager.createQuery(" SELECT role, company FROM job", Object[].class)
+            //     .getResultList();
+            // for(Object[] row : answer) {
+            //     for(Object element : row) {
+            //         log.info(element.toString());
+            //     }
+            //     log.info("\n");
+            // }
             
         }
     }
