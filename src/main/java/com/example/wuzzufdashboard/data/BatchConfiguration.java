@@ -29,8 +29,9 @@ public class BatchConfiguration {
     public FlatFileItemReader<InputJob> reader() {
         return new FlatFileItemReaderBuilder<InputJob>()
                 .name("InputJobReader")
-                .resource(new ClassPathResource("data/Wuzzuf_Jobs.csv"))
+                .resource(new ClassPathResource("data/Wuzzuf_Jobs.tsv"))
                 .delimited()
+                .delimiter("\t")
                 .names(fieldsNames)
                 .fieldSetMapper(new BeanWrapperFieldSetMapper<InputJob>() {
                     {

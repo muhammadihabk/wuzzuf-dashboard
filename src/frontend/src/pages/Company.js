@@ -17,13 +17,13 @@ export const Company = () => {
         },[]
     );
     
-    console.log(jobs.length);
     if(jobs.length === 0) {
         return <h1>Company not found</h1>;
     }
 
     return (
         <div className="Company">
+            <h1>{companyName}</h1>
             {jobs.map(job => <JobCard key={job.id} job={job}/> )}
         </div>
     );
