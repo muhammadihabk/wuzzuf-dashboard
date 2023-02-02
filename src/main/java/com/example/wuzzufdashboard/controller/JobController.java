@@ -34,7 +34,7 @@ public class JobController {
     }
     
     @GetMapping("/by_skill/{skill}")
-    public List<EntityJob> findJobsBySkill(@PathVariable String skills) {
-        return jobRepository.findBySkills(skills);
+    public List<EntityJob> findJobsBySkill(@PathVariable String skill) {
+        return jobRepository.findBySkill(skill);
     }
 }
