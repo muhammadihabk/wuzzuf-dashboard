@@ -17,7 +17,7 @@ public interface EntityJobRepository extends CrudRepository<EntityJob, Long> {
         SELECT *
         FROM job
         WHERE LCASE(skills) LIKE LCASE(CONCAT(:skill, '%'))
-            OR LCASE(skills) LIKE LCASE(CONCAT('%', ' ', :skill, '%'))
+            OR LCASE(skills) LIKE LCASE(CONCAT('%', ' ', :skill, ',%'))
             OR LCASE(skills) LIKE LCASE(CONCAT('%', :skill))
         """
             , nativeQuery = true)

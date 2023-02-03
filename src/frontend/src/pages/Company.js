@@ -1,6 +1,6 @@
 import { React, useEffect, useState } from 'react';
 import { useParams } from 'react-router-dom';
-import { JobCard } from '../components/JobCard';
+import { JobCardByCompany } from '../components/JobCardByCompany';
 
 export const Company = () => {
     const [ jobs, setJobs ] = useState([]);
@@ -24,7 +24,7 @@ export const Company = () => {
     return (
         <div className="Company">
             <h1>{companyName}</h1>
-            {jobs.map(job => <JobCard key={job.id} job={job}/> )}
+            {jobs.map(job => <JobCardByCompany key={job.id} job={job}/> )}
         </div>
     );
 }
