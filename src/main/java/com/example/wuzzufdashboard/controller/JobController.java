@@ -7,15 +7,17 @@ import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.example.wuzzufdashboard.model.EntityJob;
 import com.example.wuzzufdashboard.repository.EntityJobRepository;
 
 @RestController
-@RequestMapping("/app/jobs")
+@RequestMapping("/app")
 @CrossOrigin
 public class JobController {
+
     private EntityJobRepository jobRepository;
 
     @Autowired
@@ -23,18 +25,25 @@ public class JobController {
         this.jobRepository = jobRepository;
     }
 
-    @GetMapping
-    public List<EntityJob> findAllJobs() {
-        return (List<EntityJob>) jobRepository.findAll();
+    @GetMapping("/jobs")
+    public List<EntityJob> findJobsInPages(@RequestParam("pageNum") int pageNum,
+            @RequestParam(name="filter", required=false) String filter) {
+        if(filter.equals("")) {
+            return jobRepository.findJobsInPages(pageNum);
+        } else {
+            return jobRepository.findJobsFiltered(pageNum, filter);
+        }
     }
     
-    @GetMapping("/by_company/{company}")
-    public List<EntityJob> findJobsByCompany(@PathVariable String company) {
-        return jobRepository.findByCompany(company);
+    @GetMapping("/company")
+    public List<EntityJob> findJobsByCompany(@RequestParam("pageNum") int pageNum,
+        @RequestParam("filter") String filter) {
+        return jobRepository.findJobsByCompany(pageNum, filter);
     }
     
-    @GetMapping("/by_skill/{skill}")
-    public List<EntityJob> findJobsBySkill(@PathVariable String skill) {
-        return jobRepository.findBySkill(skill);
+    @GetMapping("/skill")
+    public List<EntityJob> findJobsBySkill(@RequestParam("pageNum") int pageNum,
+        @RequestParam("filter") String filter) {
+        return jobRepository.findJobsBySkill(pageNum, filter);
     }
 }

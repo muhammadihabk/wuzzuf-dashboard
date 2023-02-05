@@ -7,21 +7,15 @@ export const Skill = () => {
     const [ jobs, setJobs ] = useState([]);
     const { skillName } = useParams();
 
-    useEffect(
-        () => {
+    useEffect(() => {
             const fetchJobs = async() => {
-                const response = await fetch(`http://localhost:8080/app/jobs/by_skill/${skillName}`);
+                const response = await fetch(`http://localhost:8080/app/skill?pageNum=0&filter=${skillName}`);
                 const data = await response.json();
                 setJobs(data);
             };
             fetchJobs();
         },[skillName]
     );
-
-    // if(jobs.length === 0) {
-    //     return <h1>Company not found</h1>;
-    // }
-    // console.log(jobs);
 
     return (
         <div className="Skill">

@@ -6,10 +6,9 @@ export const Company = () => {
     const [ jobs, setJobs ] = useState([]);
     const { companyName } = useParams();
     
-    useEffect(
-        () => {
+    useEffect(() => {
             const fetchJobs = async() => {
-                const response = await fetch(`http://localhost:8080/app/jobs/by_company/${companyName}`);
+                const response = await fetch(`http://localhost:8080/app/company?pageNum=0&filter=${companyName}`);
                 const data = await response.json();
                 setJobs(data);
             };
@@ -17,10 +16,6 @@ export const Company = () => {
         },[]
     );
     
-    if(jobs.length === 0) {
-        return <h1>Company not found</h1>;
-    }
-
     return (
         <div className="Company">
             <h1>{companyName}</h1>
