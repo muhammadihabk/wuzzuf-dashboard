@@ -1,3 +1,11 @@
 .App {
-  
+}
+
+.nav-bar {
+    background-color: #424242;
+    padding: 1em;
+}
+
+.nav-bar h1 {
+    color: #2383e2;
 }

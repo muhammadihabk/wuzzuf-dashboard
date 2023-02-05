@@ -1,3 +1,4 @@
+import '../css/Home.css';
 import React, { useEffect, useState } from 'react';
 import { JobCardBySkill } from '../components/JobCardBySkill';
 
@@ -31,9 +32,8 @@ export const Home = () => {
     
     return (
         <div className="Home">
-            <h1>Wuzzuf Dashboard</h1>
-            <input type="text" ref={searchBarRef} placeholder="skill, role or company" onChange={handdleOnChange}/>
-            {jobs.map(job => <JobCardBySkill key={job.id} job={job}/>)}
+            <input className="searchbar" type="text" ref={searchBarRef} placeholder="skill, role or company" onChange={handdleOnChange}/>
+            <div class="cards">{jobs.map(job => <JobCardBySkill key={job.id} job={job}/>)}</div>
         </div>
     );
 }

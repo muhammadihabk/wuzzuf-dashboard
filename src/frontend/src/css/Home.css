@@ -1,0 +1,55 @@
+.Home {
+    width: 950px;
+    padding: 1em;
+    margin: 0 auto;
+}
+
+.searchbar {
+    display: block;
+    width: 400px;
+    padding: 0.5em 0.75em;
+    margin: 1rem auto;
+    font-size: 1.25rem;
+    background-color: #282828;
+    border: solid 1px #424242;
+    border-radius: 1em;
+}
+
+.cards {
+    display: grid;
+    margin: 2rem 0;
+    grid-template-columns: 1fr 1fr;
+    gap: 1.5em;
+    justify-content: center;
+}
+
+.cards > .JobCardBySkill {
+    padding: 1.25rem 1rem;
+    width: 35rem;
+    min-height: 16rem;
+    display: grid;
+    background-color: #3a3d45;
+    border-radius: 1em;
+}
+
+.cards > div h2 {
+    font-size: 1.35rem;
+    font-family: 'Noto Serif', serif;
+}
+
+.cards > div h2 a {
+    font-family: 'Noto Serif', serif;
+}
+
+.cards > div h3 {
+    font-size: 1rem;
+    align-self: flex-end;
+    color: #ab9e0b;
+    font-family: 'Noto Serif', serif;
+}
+
+.cards > div p:last-child {
+    font-size: 1rem;
+    align-self: flex-end;
+    color: #ab9e0b;
+}

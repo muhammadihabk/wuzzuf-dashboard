@@ -8,19 +8,22 @@ import { Skill } from './pages/Skill';
 function App() {
   return (
     <div className="App">
-      <Router>
-        <Routes>
-          <Route exact path='/' element={<NoAuth/>}>
-              <Route exact path='/' element={<Home/>}/>
-          </Route>
-          <Route exact path='/company' element={<NoAuth/>}>
-              <Route exact path='/company/:companyName' element={<Company/>}/>
-          </Route>
-          <Route exact path='/skill' element={<NoAuth/>}>
-              <Route exact path='/skill/:skillName' element={<Skill/>}/>
-          </Route>
-        </Routes>
-      </Router>
+      <div class="nav-bar">
+        <nav><a href="/"><h1>Wuzzuf Dashboard</h1></a></nav>
+      </div>
+        <Router>
+          <Routes>
+            <Route exact path='/' element={<NoAuth/>}>
+                <Route exact path='/' element={<Home/>}/>
+            </Route>
+            <Route exact path='/company' element={<NoAuth/>}>
+                <Route exact path='/company/:companyName' element={<Company/>}/>
+            </Route>
+            <Route exact path='/skill' element={<NoAuth/>}>
+                <Route exact path='/skill/:skillName' element={<Skill/>}/>
+            </Route>
+          </Routes>
+        </Router>
     </div>
   );
 }
