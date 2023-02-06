@@ -1,11 +1,5 @@
 @import url('https://fonts.googleapis.com/css2?family=Noto+Sans&family=Noto+Serif:wght@700&display=swap');
 
-
-@import url('https://fonts.googleapis.com/css2?family=Fredericka+the+Great&family=Work+Sans:wght@200;400;700&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Alata&family=Poppins:wght@400;700&display=swap');
-
-
-
 * {
   box-sizing: border-box;
   padding: 0;
@@ -16,6 +10,7 @@
 
 body {
   background-color: #191919;
+  overflow-x: hidden;
 }
 
 a {
@@ -25,4 +20,16 @@ a {
 
 a:hover {
   color: #1d5994;
+}
+
+::-webkit-scrollbar {
+  width: 14px;
+  background-color: #202020;
+}
+
+::-webkit-scrollbar-thumb {
+  background-color: #334a61;
+  
+}::-webkit-scrollbar-thumb:hover {
+  background-color: #334a6180;
 }
