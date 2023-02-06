@@ -33,7 +33,7 @@ export const Home = () => {
     return (
         <div className="Home">
             <input className="searchbar" type="text" ref={searchBarRef} placeholder="skill, role or company" onChange={handdleOnChange}/>
-            <div class="cards">{jobs.map(job => <JobCardBySkill key={job.id} job={job}/>)}</div>
+            <div className="cards">{jobs.map(job => <JobCardBySkill key={job.id} job={job}/>)}</div>
         </div>
     );
 }

@@ -7,9 +7,9 @@ import { Skill } from './pages/Skill';
 
 function App() {
   return (
-    <div className="App">
-      <div class="nav-bar">
-        <nav><a href="/"><h1>Wuzzuf Dashboard</h1></a></nav>
+    <div className='App'>
+      <div className='nav-bar'>
+        <nav><a href='/'><h1>Wuzzuf Dashboard</h1></a></nav>
       </div>
         <Router>
           <Routes>

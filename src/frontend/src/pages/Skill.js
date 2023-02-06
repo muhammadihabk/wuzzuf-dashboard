@@ -22,9 +22,9 @@ export const Skill = () => {
     );
 
     return (
-        <div className="Skill">
+        <div className='Skill'>
             <h1 className='page-title'>{skillName}</h1>
-            <div class="cards">{jobs.map(job => <JobCardBySkill key={job.id} job={job}/> )}</div>
+            <div className='cards'>{jobs.map(job => <JobCardBySkill key={job.id} job={job}/> )}</div>
         </div>
     );
 }

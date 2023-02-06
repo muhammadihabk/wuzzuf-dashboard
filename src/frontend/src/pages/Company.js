@@ -18,9 +18,9 @@ export const Company = () => {
     );
     
     return (
-        <div className="Company">
+        <div className='Company'>
             <h1 className='page-title'>{companyName}</h1>
-            <div class="cards">{jobs.map(job => <JobCardByCompany key={job.id} job={job}/> )}</div>
+            <div className='cards'>{jobs.map(job => <JobCardByCompany key={job.id} job={job}/> )}</div>
         </div>
     );
 }
