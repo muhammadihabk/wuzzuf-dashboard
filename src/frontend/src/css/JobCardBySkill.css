@@ -1,4 +1,4 @@
-.JobCardBySkill {
+.JobCardBySkill, .JobCardByCompany {
     padding: 1.25rem 1rem;
     width: 35rem;
     min-height: 16rem;

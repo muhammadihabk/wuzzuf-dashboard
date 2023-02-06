@@ -1,3 +1,4 @@
+import '../css/Company.css'
 import { React, useEffect, useState } from 'react';
 import { useParams } from 'react-router-dom';
 import { JobCardByCompany } from '../components/JobCardByCompany';
@@ -18,8 +19,8 @@ export const Company = () => {
     
     return (
         <div className="Company">
-            <h1>{companyName}</h1>
-            {jobs.map(job => <JobCardByCompany key={job.id} job={job}/> )}
+            <h1 className='page-title'>{companyName}</h1>
+            <div class="cards">{jobs.map(job => <JobCardByCompany key={job.id} job={job}/> )}</div>
         </div>
     );
 }
