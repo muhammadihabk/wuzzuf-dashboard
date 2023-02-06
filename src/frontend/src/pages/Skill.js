@@ -1,3 +1,4 @@
+import '../css/Skill.css';
 import { React, useEffect, useState } from 'react';
 import { useParams } from 'react-router-dom';
 import { JobCardBySkill } from '../components/JobCardBySkill';
@@ -19,8 +20,8 @@ export const Skill = () => {
 
     return (
         <div className="Skill">
-            <h1>{skillName}</h1>
-            {jobs.map(job => <JobCardBySkill key={job.id} job={job}/> )}
+            <h1 className='page-title'>{skillName}</h1>
+            <div class="cards">{jobs.map(job => <JobCardBySkill key={job.id} job={job}/> )}</div>
         </div>
     );
 }

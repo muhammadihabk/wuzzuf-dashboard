@@ -1,7 +1,8 @@
 .Home {
-    width: 950px;
-    padding: 1em;
+    display: flex;
+    flex-direction: column;
     margin: 0 auto;
+    padding: 1em;
 }
 
 .searchbar {
@@ -17,20 +18,20 @@
 
 .cards {
     display: grid;
-    margin: 2rem 0;
+    margin: 2rem auto;
     grid-template-columns: 1fr 1fr;
     gap: 1.5em;
-    justify-content: center;
+    border: 1px solid red;
 }
 
-.cards > .JobCardBySkill {
+/* .cards > .JobCardBySkill {
     padding: 1.25rem 1rem;
     width: 35rem;
     min-height: 16rem;
     display: grid;
     background-color: #3a3d45;
     border-radius: 1em;
-}
+} */
 
 .cards > div h2 {
     font-size: 1.35rem;
