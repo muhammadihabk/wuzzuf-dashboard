@@ -6,10 +6,13 @@ import { JobCardBySkill } from '../components/JobCardBySkill';
 
 export const Skill = () => {
     const [ jobs, setJobs ] = useState([]);
-    const { skillName } = useParams();
+    let { skillName } = useParams();
 
     useEffect(() => {
             const fetchJobs = async() => {
+                if(skillName.toLowerCase() === 'c++') {
+                    skillName = 'c%2B%2B';
+                }
                 const response = await fetch(`http://localhost:8080/app/skill?pageNum=0&filter=${skillName}`);
                 const data = await response.json();
                 setJobs(data);
