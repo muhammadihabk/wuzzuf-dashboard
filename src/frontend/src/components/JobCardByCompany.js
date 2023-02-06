@@ -11,10 +11,10 @@ export const JobCardByCompany = ({job}) => {
       <h3>Skills</h3>
       <p>{skills.map(
         skill => {
-          return <Link to={`/skill/${skill.trim()}`}>{skill.trim()}, </Link>;
+          return <><Link to={`/skill/${skill.trim()}`}>{skill.trim()}</Link>, </>;
         }
       )}
-      <Link to={`/skill/${lastSkill.trim()}`}>{lastSkill.trim()}</Link>
+      <Link to={`/skill/${lastSkill.trim()}`}>{lastSkill.trim()}</Link>.
       </p>
       <p>{job.yoe}</p>
     </div>
