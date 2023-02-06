@@ -3,6 +3,7 @@
     width: 35rem;
     min-height: 16rem;
     display: grid;
-    background-color: #3a3d45;
+    /* background-color: rgba(91, 91, 91, 0.35); */
+    background-color: #353539;
     border-radius: 1em;
 }

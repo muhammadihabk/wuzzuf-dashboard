@@ -24,7 +24,7 @@
 }
 
 .cards > div h2 {
-    font-size: 1.35rem;
+    font-size: 1.42rem;
     font-family: 'Noto Serif', serif;
 }
 
@@ -33,14 +33,12 @@
 }
 
 .cards > div h3 {
-    font-size: 1rem;
+    font-size: 1.21rem;
     align-self: flex-end;
-    color: #ab9e0b;
     font-family: 'Noto Serif', serif;
 }
 
 .cards > div p:last-child {
     font-size: 1rem;
     align-self: flex-end;
-    color: #ab9e0b;
 }

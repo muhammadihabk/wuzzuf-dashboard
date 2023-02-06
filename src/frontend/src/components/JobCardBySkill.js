@@ -1,4 +1,4 @@
-import '../css/JobCardBySkill.css';
+import '../css/JobCard.css';
 import { React } from 'react';
 import { Link } from 'react-router-dom';
 
