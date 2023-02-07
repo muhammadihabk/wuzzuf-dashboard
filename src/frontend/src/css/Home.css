@@ -13,7 +13,7 @@
     font-size: 1.25rem;
     background-color: #282828;
     border: solid 1px #424242;
-    border-radius: 1em;
+    border-radius: 7px;
 }
 
 .cards {
@@ -42,3 +42,18 @@
     font-size: 1rem;
     align-self: flex-end;
 }
+
+.to-page-top {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 1rem;
+    padding: 0.15rem 0.75rem;
+    font-size: 1.25rem;
+    border: 1px solid #5a97d5;
+    border-radius: 7px;
+}
+
+.to-page-top:hover {
+    border-color: #1d5994;
+  }

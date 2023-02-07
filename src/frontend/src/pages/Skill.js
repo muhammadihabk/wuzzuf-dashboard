@@ -1,7 +1,7 @@
 import '../css/Skill.css';
 import { React, useEffect, useState } from 'react';
 import { useParams } from 'react-router-dom';
-import { JobCardBySkill } from '../components/JobCardBySkill';
+import JobCardBySkill from '../components/JobCardBySkill';
 
 
 export const Skill = () => {

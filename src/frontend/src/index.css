@@ -28,8 +28,8 @@ a:hover {
 }
 
 ::-webkit-scrollbar-thumb {
-  background-color: #334a61;
+  background-color: #334a6180;
   
 }::-webkit-scrollbar-thumb:hover {
-  background-color: #334a6180;
+  background-color: #334a61;
 }
