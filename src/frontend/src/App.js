@@ -17,7 +17,7 @@ function App() {
                 <Route exact path='/' element={<Home/>}/>
             </Route>
             <Route exact path='/company' element={<NoAuth/>}>
-                <Route exact path='/company/:companyName' element={<Company/>}/>
+                <Route exact path='/company/:companyNameParam' element={<Company/>}/>
             </Route>
             <Route exact path='/skill' element={<NoAuth/>}>
                 <Route exact path='/skill/:skillNameParam' element={<Skill/>}/>

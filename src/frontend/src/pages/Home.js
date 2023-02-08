@@ -1,7 +1,7 @@
 import '../css/Home.css';
 import { useState, useRef, useCallback } from 'react';
 import JobCardBySkill from '../components/JobCardBySkill';
-import useGetJobsForHome from '../hooks/useGetJobsForHome';
+import useGetJobs from '../hooks/useGetJobs';
 
 export const Home = () => {
     const [ pageNum, setPageNum ] = useState(0);
@@ -13,7 +13,7 @@ export const Home = () => {
         isError,
         errorMsg,
         hasNextPage
-    } = useGetJobsForHome(filter, pageNum);
+    } = useGetJobs(filter, pageNum);
 
     const observer = useRef();
     const lastCardRef = useCallback(job => {

@@ -2,7 +2,7 @@ import '../css/Skill.css';
 import { useState, useRef, useCallback } from 'react';
 import { useParams } from 'react-router-dom';
 import JobCardBySkill from '../components/JobCardBySkill';
-import useGetJobsForHome from '../hooks/useGetJobsForHome';
+import useGetJobs from '../hooks/useGetJobs';
 
 
 export const Skill = () => {
@@ -20,7 +20,7 @@ export const Skill = () => {
         isError,
         errorMsg,
         hasNextPage
-    } = useGetJobsForHome(skillName, pageNum);
+    } = useGetJobs(skillName, pageNum);
 
     const observer = useRef();
     const lastCardRef = useCallback(job => {

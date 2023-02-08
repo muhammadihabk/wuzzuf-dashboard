@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
-import { getJobsData } from '../api/GetJobsForHome';
+import { getJobsData } from '../api/GetJobs';
 
-const useGetJobsForHome = (filter, pageNum) => {
+const useGetJobs = (filter, pageNum) => {
     const [ jobs, setJobs ] = useState([]);
     const [ isLoading, setIsLoading ] = useState(false);
     const [ isError, setIsError ] = useState(false);
@@ -36,4 +36,4 @@ const useGetJobsForHome = (filter, pageNum) => {
     return {jobs, isLoading, isError, errorMsg, hasNextPage};
 }
 
-export default useGetJobsForHome;
+export default useGetJobs;

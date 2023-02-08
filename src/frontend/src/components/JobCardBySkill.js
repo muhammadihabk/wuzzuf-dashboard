@@ -24,8 +24,8 @@ const JobCardBySkill = React.forwardRef(({job}, ref) => {
   );
   
   let card = ref
-    ? <div className="JobCardBySkill" ref={ref}>{cardBody}</div>
-    : <div className="JobCardBySkill">{cardBody}</div>;
+    ? <div className="JobCard" ref={ref}>{cardBody}</div>
+    : <div className="JobCard">{cardBody}</div>;
 
   return card;
 });
