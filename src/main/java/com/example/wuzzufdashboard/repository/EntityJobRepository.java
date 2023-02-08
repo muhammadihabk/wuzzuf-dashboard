@@ -115,6 +115,8 @@ public class EntityJobRepository {
             return "c\\+\\+";
         } else if(filter.equals("c")) {
             return "\\bc\\b[\\s,]|\\bc\\b$";
+        } else if(filter.equals("c#")) {
+            return "\\b" + filter;
         } else {
             return filter + "\\b";
         }
