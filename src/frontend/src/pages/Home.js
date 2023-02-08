@@ -41,7 +41,7 @@ export const Home = () => {
     
     const handleSearch = (e) => {
         // if input is injection clean, do the search
-        if((/[^a-zA-Z\s\+#-]/).test(e.target.value)) { return; }
+        if((/[^a-zA-Z\s\+#-/]/).test(e.target.value)) { return; }
         cards = [];
         setPageNum(0);
         let temp = e.target.value;

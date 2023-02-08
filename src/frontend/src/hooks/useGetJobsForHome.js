@@ -1,5 +1,4 @@
 import React, { useState, useEffect } from 'react';
-import { JobCardBySkill } from '../components/JobCardBySkill';
 import { getJobsData } from '../api/GetJobsForHome';
 
 const useGetJobsForHome = (filter, pageNum) => {

@@ -20,7 +20,7 @@ function App() {
                 <Route exact path='/company/:companyName' element={<Company/>}/>
             </Route>
             <Route exact path='/skill' element={<NoAuth/>}>
-                <Route exact path='/skill/:skillName' element={<Skill/>}/>
+                <Route exact path='/skill/:skillNameParam' element={<Skill/>}/>
             </Route>
           </Routes>
         </Router>

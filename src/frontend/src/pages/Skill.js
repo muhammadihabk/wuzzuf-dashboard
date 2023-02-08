@@ -6,8 +6,13 @@ import useGetJobsForHome from '../hooks/useGetJobsForHome';
 
 
 export const Skill = () => {
-    const { skillName } = useParams();
+    const { skillNameParam } = useParams();
     const [ pageNum, setPageNum ] = useState(0);
+    
+    const title = skillNameParam;
+    let skillName = skillNameParam;
+    skillName = skillName.replaceAll('+', '%2B')
+            .replaceAll('#', '%23');
 
     const {
         jobs,
@@ -43,7 +48,7 @@ export const Skill = () => {
 
     return (
         <div className='Skill'>
-            <h1 className='page-title'>{skillName}</h1>
+            <h1 className='page-title'>{title}</h1>
             <div className="cards">{cards}</div>
             {isLoading && <p>loading...</p>}
             <a className='to-page-top' href='#top'>^</a>
