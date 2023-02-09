@@ -1,12 +1,16 @@
 import React, { useState, useEffect } from 'react';
 import { getJobsData } from '../api/GetJobs';
 
-const useGetJobs = (filter, pageNum) => {
+const useGetJobs = (inFilter, pageNum) => {
     const [ jobs, setJobs ] = useState([]);
     const [ isLoading, setIsLoading ] = useState(false);
     const [ isError, setIsError ] = useState(false);
     const [ errorMsg, setErrorMsg ] = useState('');
     const [ hasNextPage, setHasNextPage ] = useState(false);
+    let filter = `%25${inFilter.toLowerCase()
+        .replaceAll('+', '%2B')
+        .replaceAll('#', '%23')
+        .replaceAll('&', '%26')}%25`;
 
     useEffect(() => {
         if(pageNum === 0) {

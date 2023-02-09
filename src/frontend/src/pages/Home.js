@@ -5,7 +5,7 @@ import useGetJobs from '../hooks/useGetJobs';
 
 export const Home = () => {
     const [ pageNum, setPageNum ] = useState(0);
-    const [ filter, setFilter ] = useState('');
+    const [ filter, setFilter ] = useState('%25%25');
 
     const {
         jobs,
@@ -14,6 +14,7 @@ export const Home = () => {
         errorMsg,
         hasNextPage
     } = useGetJobs(filter, pageNum);
+
 
     const observer = useRef();
     const lastCardRef = useCallback(job => {
@@ -40,14 +41,11 @@ export const Home = () => {
     }
     
     const handleSearch = (e) => {
-        // if input is injection clean, do the search
-        if((/[^a-zA-Z\s\+#-/]/).test(e.target.value)) { return; }
+        // if input is not injection clean, don't update the filter
+        if((/[^a-zA-Z\s#\+-/]/).test(e.target.value)) { return; }
         cards = [];
         setPageNum(0);
-        let temp = e.target.value;
-        temp = temp.replaceAll('+', '%2B')
-            .replaceAll('#', '%23');
-        setFilter(temp);
+        setFilter(e.target.value);
     };
     
     return (

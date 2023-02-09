@@ -6,13 +6,10 @@ import useGetJobs from '../hooks/useGetJobs';
 
 
 export const Skill = () => {
-    const { skillNameParam } = useParams();
+    const { skillName } = useParams();
     const [ pageNum, setPageNum ] = useState(0);
     
-    const title = skillNameParam;
-    let skillName = skillNameParam;
-    skillName = skillName.replaceAll('+', '%2B')
-            .replaceAll('#', '%23');
+    const title = skillName;
 
     const {
         jobs,
