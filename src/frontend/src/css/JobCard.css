@@ -1,7 +1,7 @@
 .JobCard {
     padding: 1.25rem 1rem;
-    width: 35rem;
-    min-height: 16rem;
+    max-width: 500px;
+    min-height: 300px;
     display: grid;
     background-color: #353539;
     border-radius: 7px;
