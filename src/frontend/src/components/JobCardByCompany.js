@@ -11,12 +11,12 @@ const JobCardByCompany = React.forwardRef(({job}, ref) => {
       <h2>{job.role}</h2>
       <h3>Skills</h3>
       <p>
-        {skills.map(skill => {
+        {skills.map((skill, index) => {
           let link = skill.replaceAll('+', '%2B').replaceAll('#', '%23').replaceAll('/', '%2F').trim();
-          return <><Link to={`/skill/${link}`}>{skill.trim()}</Link>, </>;
+          return <><Link to={`/skill/${link}`} key={index}>{skill.trim()}</Link>, </>;
         }
         )}
-      <Link to={`/skill/${lastLink}`}>{lastSkill.trim()}</Link>.
+      <Link to={`/skill/${lastLink}`} key={lastSkill}>{lastSkill.trim()}</Link>.
       </p>
       <p>{job.yoe}</p>
     </>
