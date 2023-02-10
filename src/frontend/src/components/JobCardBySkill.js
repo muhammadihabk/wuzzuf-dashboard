@@ -14,10 +14,10 @@ const JobCardBySkill = React.forwardRef(({job}, ref) => {
       <p>
         {skills.map((skill, index) => {
           let link = skill.replaceAll('+', '%2B').replaceAll('#', '%23').replaceAll('/', '%2F').trim();
-          return <><Link to={`/skill/${link}`}>{skill.trim()} key={index}</Link>, </>;
+          return <span key={job.id+index}><Link to={`/skill/${link}`}>{skill.trim()}</Link>, </span>;
         }
         )}
-      <Link to={`/skill/${lastLink}`} key={lastSkill}>{lastSkill.trim()}</Link>.
+      <Link to={`/skill/${lastLink}`} key={job.id}>{lastSkill.trim()}</Link>.
       </p>
       <p>{job.yoe}</p>
     </>
