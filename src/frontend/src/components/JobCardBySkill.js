@@ -12,7 +12,7 @@ const JobCardBySkill = React.forwardRef(({job, setPageNum}, ref) => {
   const cardBody = (
     <>
       <h2>{job.role}</h2>
-      <h2><Link to={`/company/${job.company}`}>{job.company}</Link></h2>
+      <h2><Link to={`/company/${job.company}`} onClick={handleLink}>{job.company}</Link></h2>
       <h3>Skills</h3>
       <p>
         {skills.map((skill, index) => {
