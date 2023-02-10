@@ -35,7 +35,7 @@ const Home = () => {
     }
 
     let cards = [];
-    if(jobs.length != 0) {
+    if(jobs.length !== 0) {
         for(let i = 0; i < jobs.length - 1; i++) {
             cards.push(<JobCard key={jobs[i].id} job={jobs[i]} setPageNum={setPageNum}
                 setFilter={setFilter} pageKind={window.location.href.includes('/company') ? 'company' : 'skill'}/>);
