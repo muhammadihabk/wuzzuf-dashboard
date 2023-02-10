@@ -1,11 +1,14 @@
 import '../css/Home.css';
 import { useState, useRef, useCallback } from 'react';
+import { useParams } from 'react-router-dom';
 import JobCard from '../components/JobCard';
 import useGetJobs from '../hooks/useGetJobs';
 
-export const Home = () => {
+const Home = () => {
+    const { filter: paramFilter } = useParams();
     const [ pageNum, setPageNum ] = useState(0);
-    const [ filter, setFilter ] = useState('%25%25');
+    const [ filter, setFilter ] = useState(paramFilter === undefined
+        && window.location.href.includes('/home') ? '%25%25' : paramFilter);
 
     const {
         jobs,
@@ -35,10 +38,10 @@ export const Home = () => {
     if(jobs.length != 0) {
         for(let i = 0; i < jobs.length - 1; i++) {
             cards.push(<JobCard key={jobs[i].id} job={jobs[i]} setPageNum={setPageNum}
-                pageKind={'skill'}/>);
+                setFilter={setFilter} pageKind={window.location.href.includes('/company') ? 'company' : 'skill'}/>);
         }
         cards.push(<JobCard ref={lastCardRef} key={jobs[jobs.length - 1].id} job={jobs[jobs.length - 1]}
-            setPageNum={setPageNum} pageKind={'skill'}/>);
+            setFilter={setFilter} setPageNum={setPageNum} pageKind={window.location.href.includes('/company') ? 'company' : 'skill'}/>);
     }
     
     const handleSearch = (e) => {
@@ -57,18 +60,27 @@ export const Home = () => {
     };
 
     const handleSubmit = e => e.preventDefault();
-    
-    return (
-        <div className="Home" id='top'>
-            <form onSubmit={handleSubmit}>
+
+    let content = null;
+    if(window.location.href.includes('/home')) {
+        content = <form onSubmit={handleSubmit}>
                 <div className="searchbar">
                     <span className='searchbar-hint'>/</span>
                     <input className="searchbar__input" id='searchbar' type="text" placeholder="skill, role or company" onChange={handleSearch}/>
                 </div>
             </form>
+    } else {
+        content = <h1 className='page-title'>{paramFilter}</h1>;
+    }
+    
+    return (
+        <div className="Home" id='top'>
+            {content}
             <div className="cards">{cards}</div>
             {isLoading && <p>loading...</p>}
             <a className='to-page-top' href='#top'>^</a>
         </div>
     );
 }
+
+export default Home;

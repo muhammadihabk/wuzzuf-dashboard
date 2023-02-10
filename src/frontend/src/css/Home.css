@@ -40,6 +40,13 @@
     border-radius: 7px;
 }
 
+.page-title {
+    text-align: center;
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+    font-family: 'Noto Serif', serif;
+    font-size: 3rem;
+}
 
 .cards {
     display: flex;
