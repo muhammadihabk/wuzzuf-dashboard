@@ -22,7 +22,7 @@ export const Company = () => {
         if(isLoading) { return; }
         if(observer.current) { observer.current.disconnect(); }
         observer.current = new IntersectionObserver(observerJobs => {
-            if(observerJobs[0].isIntersecting && hasNextPage) {
+            if(observerJobs[0].isIntersecting && hasNextPage && pageNum >= 12) {
                 setPageNum(prev => prev + 1);
             }
         });

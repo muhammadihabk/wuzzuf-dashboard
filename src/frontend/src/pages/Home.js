@@ -21,7 +21,7 @@ export const Home = () => {
         if(isLoading) { return; }
         if(observer.current) { observer.current.disconnect(); }
         observer.current = new IntersectionObserver(observerJobs => {
-            if(observerJobs[0].isIntersecting && hasNextPage) {
+            if(observerJobs[0].isIntersecting && hasNextPage && jobs.length >= 12) {
                 setPageNum(prev => prev + 1);
             }
         });

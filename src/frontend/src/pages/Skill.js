@@ -36,7 +36,7 @@ export const Skill = () => {
     }
 
     let cards = [];
-    if(jobs.length != 0) {
+    if(jobs.length !== 0) {
         for(let i = 0; i < jobs.length - 1; i++) {
             cards.push(<JobCardBySkill key={jobs[i].id} job={jobs[i]}/>);
         }
