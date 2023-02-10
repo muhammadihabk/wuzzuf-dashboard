@@ -2,7 +2,7 @@ import '../css/JobCard.css';
 import React from 'react';
 import { Link } from 'react-router-dom';
 
-const JobCardByCompany = React.forwardRef(({job, setPageNum}, ref) => {
+const JobCardBySkill = React.forwardRef(({job, setPageNum, pageKind}, ref) => {
   let skills = job.skills.split(",");
   const lastSkill = skills.pop();
   const lastLink = lastSkill.replaceAll('+', '%2B').replaceAll('#', '%23').replaceAll('/', '%2F').trim();
@@ -12,6 +12,7 @@ const JobCardByCompany = React.forwardRef(({job, setPageNum}, ref) => {
   const cardBody = (
     <>
       <h2>{job.role}</h2>
+      {pageKind === 'skill' && <h2><Link to={`/company/${job.company}`} onClick={handleLink}>{job.company}</Link></h2>}
       <h3>Skills</h3>
       <p>
         {skills.map((skill, index) => {
@@ -32,4 +33,4 @@ const JobCardByCompany = React.forwardRef(({job, setPageNum}, ref) => {
   return card;
 });
 
-export default JobCardByCompany;
+export default JobCardBySkill;

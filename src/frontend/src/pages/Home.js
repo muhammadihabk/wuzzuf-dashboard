@@ -1,6 +1,6 @@
 import '../css/Home.css';
 import { useState, useRef, useCallback } from 'react';
-import JobCardBySkill from '../components/JobCardBySkill';
+import JobCard from '../components/JobCard';
 import useGetJobs from '../hooks/useGetJobs';
 
 export const Home = () => {
@@ -34,10 +34,11 @@ export const Home = () => {
     let cards = [];
     if(jobs.length != 0) {
         for(let i = 0; i < jobs.length - 1; i++) {
-            cards.push(<JobCardBySkill key={jobs[i].id} job={jobs[i]} setPageNum={setPageNum}/>);
+            cards.push(<JobCard key={jobs[i].id} job={jobs[i]} setPageNum={setPageNum}
+                pageKind={'skill'}/>);
         }
-        cards.push(<JobCardBySkill ref={lastCardRef} key={jobs[jobs.length - 1].id} job={jobs[jobs.length - 1]}
-            setPageNum={setPageNum}/>);
+        cards.push(<JobCard ref={lastCardRef} key={jobs[jobs.length - 1].id} job={jobs[jobs.length - 1]}
+            setPageNum={setPageNum} pageKind={'skill'}/>);
     }
     
     const handleSearch = (e) => {
