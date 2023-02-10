@@ -38,9 +38,10 @@ export const Skill = () => {
     let cards = [];
     if(jobs.length !== 0) {
         for(let i = 0; i < jobs.length - 1; i++) {
-            cards.push(<JobCardBySkill key={jobs[i].id} job={jobs[i]}/>);
+            cards.push(<JobCardBySkill key={jobs[i].id} job={jobs[i]} setPageNum={setPageNum}/>);
         }
-        cards.push(<JobCardBySkill ref={lastCardRef} key={jobs[jobs.length - 1].id} job={jobs[jobs.length - 1]}/>);
+        cards.push(<JobCardBySkill ref={lastCardRef} key={jobs[jobs.length - 1].id} job={jobs[jobs.length - 1]}
+            setPageNum={setPageNum}/>);
     }
 
     return (

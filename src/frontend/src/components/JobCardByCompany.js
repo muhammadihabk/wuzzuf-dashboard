@@ -2,10 +2,13 @@ import '../css/JobCard.css';
 import React from 'react';
 import { Link } from 'react-router-dom';
 
-const JobCardByCompany = React.forwardRef(({job}, ref) => {
+const JobCardByCompany = React.forwardRef(({job, setPageNum}, ref) => {
   let skills = job.skills.split(",");
   const lastSkill = skills.pop();
   const lastLink = lastSkill.replaceAll('+', '%2B').replaceAll('#', '%23').replaceAll('/', '%2F').trim();
+  const handleLink = () => {
+    setPageNum(0);
+  };
   const cardBody = (
     <>
       <h2>{job.role}</h2>
@@ -13,10 +16,10 @@ const JobCardByCompany = React.forwardRef(({job}, ref) => {
       <p>
         {skills.map((skill, index) => {
           let link = skill.replaceAll('+', '%2B').replaceAll('#', '%23').replaceAll('/', '%2F').trim();
-          return <span key={job.id+index}><Link to={`/skill/${link}`}>{skill.trim()}</Link>, </span>;
+          return <span key={job.id+index}><Link to={`/skill/${link}`} onClick={handleLink}>{skill.trim()}</Link>, </span>;
         }
         )}
-      <Link to={`/skill/${lastLink}`} key={job.id}>{lastSkill.trim()}</Link>.
+      <Link to={`/skill/${lastLink}`} key={job.id} onClick={handleLink}>{lastSkill.trim()}</Link>.
       </p>
       <p>{job.yoe}</p>
     </>
