@@ -7,6 +7,9 @@ const useGetJobs = (inFilter, pageNum) => {
     const [ isError, setIsError ] = useState(false);
     const [ errorMsg, setErrorMsg ] = useState('');
     const [ hasNextPage, setHasNextPage ] = useState(false);
+    if(inFilter === undefined) {
+        inFilter = '';
+    }
     let filter = `%25${inFilter.toLowerCase()
         .replaceAll('+', '%2B')
         .replaceAll('#', '%23')
