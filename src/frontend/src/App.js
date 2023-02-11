@@ -6,7 +6,7 @@ function App() {
   return (
     <div className='App'>
       <div className='nav-bar'>
-        <nav><a href='/'><h1>Wuzzuf Dashboard</h1></a></nav>
+        <nav><a href='/' className='page-logo'>Wuzzuf Dashboard</a></nav>
       </div>
         <BrowserRouter>
           <Routes>

@@ -1,8 +1,15 @@
 .nav-bar {
     background-color: #424242;
-    padding: 1em;
+    padding: 1rem;
 }
 
-.nav-bar h1 {
+.page-logo {
+    color: #2383e2;
+    font-size: 1.5rem;
+    font-family: 'Noto Sans', sans-serif;
+    font-weight: 600;
+    padding: 0.5rem;
+}
+.page-logo:hover {
     color: #2383e2;
 }
