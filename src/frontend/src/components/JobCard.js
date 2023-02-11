@@ -8,22 +8,20 @@ const JobCardBySkill = React.forwardRef(({job, setPageNum, setFilter, pageKind},
 
   const handleLink = (e) => {
     setPageNum(0);
-    setFilter(e.target.innerText.replaceAll('+', '%2B')
-      .replaceAll('#', '%23')
-      .replaceAll('/', '%2F').trim());
+    setFilter(e.target.innerText);
   };
 
   const cardBody = (
     <>
       <h2>{job.role}</h2>
-      {pageKind === 'skill' && <h2><Link to={`/company/${job.company.trim()}`} onClick={handleLink}>{job.company.trim()}</Link></h2>}
+      {pageKind === 'skill' && <h2><Link to={`/company/${job.company.replaceAll('/', '%2F').replaceAll('#', '%23').trim()}`} onClick={handleLink}>{job.company.trim()}</Link></h2>}
       <h3>Skills</h3>
       <p>
         {skills.map((skill, index) => {
-          return <span key={job.id+index}><Link to={`/skill/${skill.trim()}`} onClick={handleLink}>{skill.trim()}</Link>, </span>;
+          return <span key={job.id+index}><Link to={`/skill/${skill.replaceAll('/', '%2F').replaceAll('#', '%23').trim()}`} onClick={handleLink}>{skill.trim()}</Link>, </span>;
         }
         )}
-        <Link to={`/skill/${lastSkill.trim()}`} key={job.id} onClick={handleLink}>{lastSkill.trim()}</Link>.
+        <Link to={`/skill/${lastSkill.replaceAll('/', '%2F').replaceAll('#', '%23').trim()}`} key={job.id} onClick={handleLink}>{lastSkill.trim()}</Link>.
       </p>
       <p>{job.yoe}</p>
     </>

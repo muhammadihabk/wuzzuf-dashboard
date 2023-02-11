@@ -10,7 +10,8 @@ const useGetJobs = (inFilter, pageNum) => {
     let filter = `%25${inFilter.toLowerCase()
         .replaceAll('+', '%2B')
         .replaceAll('#', '%23')
-        .replaceAll('&', '%26')}%25`;
+        .replaceAll('&', '%26')
+        .replaceAll('/', '%2F').trim()}%25`;
 
     useEffect(() => {
         if(pageNum === 0) {
