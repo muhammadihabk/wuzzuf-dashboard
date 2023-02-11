@@ -1,5 +1,5 @@
 import './App.css';
-import {BrowserRouter as Router, Route, Routes, Navigate} from 'react-router-dom';
+import {BrowserRouter, Route, Routes} from 'react-router-dom';
 import Home from './pages/Home';
 
 function App() {
@@ -8,16 +8,14 @@ function App() {
       <div className='nav-bar'>
         <nav><a href='/'><h1>Wuzzuf Dashboard</h1></a></nav>
       </div>
-        <Router>
+        <BrowserRouter>
           <Routes>
-            <Route path='/' element={<Navigate to="/home" />}/>
-            <Route path='/home' element={<Home/>}/>
-            <Route path='/'>
+            <Route path='/' element={<Home/>}>
               <Route path='company/:filter' element={<Home/>}/>
               <Route path='skill/:filter' element={<Home/>}/>
             </Route>
           </Routes>
-        </Router>
+        </BrowserRouter>
     </div>
   );
 }

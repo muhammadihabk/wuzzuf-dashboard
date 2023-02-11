@@ -8,7 +8,7 @@ const Home = () => {
     const { filter: paramFilter } = useParams();
     const [ pageNum, setPageNum ] = useState(0);
     const [ filter, setFilter ] = useState(paramFilter === undefined
-        && window.location.href.includes('/home') ? '%25%25' : paramFilter);
+        && window.location.href === 'http://localhost:8080/' ? '%25%25' : paramFilter);
 
     const {
         jobs,
@@ -62,7 +62,7 @@ const Home = () => {
     const handleSubmit = e => e.preventDefault();
 
     let content = null;
-    if(window.location.href.includes('/home')) {
+    if(window.location.href === 'http://localhost:8080/') {
         content = <form onSubmit={handleSubmit}>
                 <div className="searchbar">
                     <span className='searchbar-hint'>/</span>
